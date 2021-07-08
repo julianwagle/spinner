@@ -20,7 +20,7 @@ class PlaySpinner():
         self.max_daily_spins = 400
         self.table_losses_before_entry = 5
         self.total_days_of_play = 250
-        self.desired_wallet = 1000000
+        self.desired_wallet = 100000
         # ADJUST # ABOVE # VALUES # FREQUENTLY # FOR # EXPIRAMENTATION # 
 
         self.max_bet_val = 5000
@@ -169,6 +169,9 @@ class PlaySpinner():
         print(self.verify_sanity())
         print(f"Your wallet is at ${self.wallet_total_val}. You received an average daily return of ${average_daily_return}")
         pyplot.plot(self.eval_wallet_vals)
+        pyplot.axhline(y = self.wallet_starting_val, color = 'b', linestyle = 'dashed')
+        pyplot.axhline(y = self.desired_wallet, color = 'g', linestyle = 'dashed')
+        pyplot.axhline(y = self.wallet_min_auth_val, color = 'r', linestyle = 'dashed')
         pyplot.title('Game Evaluation')
         pyplot.xlabel('Time')
         pyplot.ylabel('$hmoney')
