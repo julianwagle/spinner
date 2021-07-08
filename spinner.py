@@ -56,7 +56,7 @@ class PlaySpinner():
 
         while bool(
                 self.wallet_min_auth_val < self.wallet_total_val < self.desired_wallet
-            ) or bool(
+            ) and bool(
                 self.total_days_played <= self.total_days_of_play
             ):
 
